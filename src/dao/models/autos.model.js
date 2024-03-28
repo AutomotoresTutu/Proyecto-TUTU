@@ -3,20 +3,17 @@ const { Schema } = mongoose;
 
 const autosSchema = new Schema({
     patente: { type: String, required: true },
-    marca: { type: String, required: true },
-    modelo: { type: String, required: true },
-    km: { type: Number, required: true },
-    año: { type: Number, required: true },
-    color: { type: String, required: true },
-    // agregar categoria 
-    categoria: {
-        type: String,
-        enum: ['propio', 'consigna'],
-        required: true
-    },
-    observaciones: { type: String },
+    caracteristicasPrincipales: { type: Schema.Types.ObjectId, ref: 'Caracteristicas'},
+    marca: { type: Schema.Types.ObjectId, ref: 'Marca' },
+    modelo: { type: Schema.Types.ObjectId, ref: 'Modelo' },
+    anio: { type: Schema.Types.ObjectId, ref: 'AnioFabr' },
+    version: {type: Schema.Types.ObjectId, ref: 'Version'},
+    km: { type: Schema.Types.ObjectId, ref: 'Km' },
+    color: { type: Schema.Types.ObjectId, ref: 'Color' },
+    categoria: {type: Schema.Types.ObjectId, ref: 'Categoria'},
+    observaciones: { type: Schema.Types.ObjectId, ref: 'Observaciones' },
     titularRegistral: { type: Schema.Types.ObjectId, ref: 'titularRegistral' }, 
-    Contacto: { type: Schema.Types.ObjectId, ref: 'Contacto' }, 
+    contacto: { type: Schema.Types.ObjectId, ref: 'Contacto' }, 
     registroAutomotor: { type: Schema.Types.ObjectId, ref: 'Registro' },
     puestoPolicial: { type: Schema.Types.ObjectId, ref: 'Policia' },
     docDelVehiculo: { type: Schema.Types.ObjectId, ref: 'Doc' },
