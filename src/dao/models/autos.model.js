@@ -30,7 +30,7 @@ const autosSchema = new Schema({
         }
     }],
     
-    // mecanica: {type: Schema.Types.ObjectId, ref: 'Macanica'},
+    // mecanica: {type: Schema.Types.ObjectId, ref: 'Mecanica'},
     // precio:{ type :Schema.Types.ObjectId ,ref :'Precios'},
     // gestoria:{ type :Schema.Types.ObjectId ,ref :'Gestoria'},
     // redes:{ type :Schema.Types.ObjectId ,ref :'Redes'},

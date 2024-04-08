@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-
 const parteArregloSchema = new Schema({
     nombre: String,
     precioEstimado: {
@@ -13,9 +12,10 @@ const parteArregloSchema = new Schema({
         enum: ['Aprobado', 'Rechazado', 'Pendiente'],
         default: 'Pendiente'
     },
+    fechaAprobacion: Date, 
+    fechaRechazo: Date, 
     observaciones: String
 });
-
 
 const peritajeSchema = new Schema({
     auto: {
@@ -29,6 +29,10 @@ const peritajeSchema = new Schema({
         type: String,
         enum: ['Pendiente', 'Completado'],
         default: 'Pendiente'
+    },
+    fechaCarga: {
+        type: Date,
+        default: Date.now
     }
 });
 
