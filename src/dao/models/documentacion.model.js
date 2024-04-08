@@ -1,47 +1,28 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const documentacionSchema = new Schema({
-    auto: {
-        type: Schema.Types.ObjectId,
-        ref: 'Auto',
-        required: true
+const ElementosSchema = new Schema({
+    auto: { type: Schema.Types.ObjectId, ref: 'Autos', required: true },
+    stereo: { type: Boolean, default: false },
+    gato: { type: Boolean, default: false },
+    llaveCruz: { type: Boolean, default: false },
+    ruedaAuxiliar: { type: Boolean, default: false },
+    manual: { type: Boolean, default: false },
+    copiaLlave: { type: Boolean, default: false },
+    itv: {
+        realizado: { type: Boolean, default: false },
+        fechaVencimiento: { type: Date, default: null }
     },
-    tituloAutomotor: {
-        tieneTitulo: {
-            type: Boolean,
-            default: false
-        },
-        codigoTitulo: {
-            type: String,
-            default: null
-        }
+    cambioAceite: {
+        realizado: { type: Boolean, default: false },
+        km: { type: Number, default: null }
     },
-    tarjetaVerde: {
-        type: Boolean,
-        default: false
+    cambioCorrea: {
+        realizado: { type: Boolean, default: false },
+        km: { type: Number, default: null }
     },
-    tarjetaGNC: {
-        tieneTarjetaGNC: {
-            type: Boolean,
-            default: false
-        },
-        fechaVencimientoTarjetaGNC: {
-            type: Date,
-            default: null
-        }
-    },
-    obleaGNC: {
-        tieneObleaGNC: {
-            type: Boolean,
-            default: false
-        },
-        fechaVencimientoObleaGNC: {
-            type: Date,
-            default: null
-        }
-    }
+    observaciones: { type: String }
 });
 
-const Documentacion = mongoose.model('Documentacion', documentacionSchema);
-export default Documentacion;
+const Elementos = mongoose.model('ElementosBasicos', ElementosSchema);
+export default Elementos;

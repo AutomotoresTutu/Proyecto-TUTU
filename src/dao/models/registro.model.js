@@ -1,41 +1,21 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
 
-const registroSchema = new Schema({
-    auto: {
-        type: Schema.Types.ObjectId,
-        ref: 'Auto',
-        required: true
-    },
-    ceroOcho: {
-        type: Boolean,
-        default: false
-    },
+const RegistroSchema = new mongoose.Schema({
+    auto: { type: mongoose.Schema.Types.ObjectId, ref: 'Auto', required: true },
+    ceroOcho: { type: Boolean, default: false },
     treceLibreDeuda: {
-        solicitado: {
-            type: Boolean,
-            default: false
-        },
-        fechaPedido: {
-            type: Date
-        },
-        fechaVencimiento: {
-            type: Date
-        }
+        solicitado: { type: Boolean, default: false },
+        fechaPedido: { type: Date, default: null },
+        fechaVencimiento: { type: Date, default: null }
     },
     informeDominioHistorico: {
-        solicitado: {
-            type: Boolean,
-            default: false
-        },
-        fechaPedido: {
-            type: Date
-        },
-        fechaVencimiento: {
-            type: Date
-        }
-    }
+        solicitado: { type: Boolean, default: false },
+        fechaPedido: { type: Date, default: null },
+        fechaVencimiento: { type: Date, default: null }
+    },
+    observaciones: { type: String },
+    estado: { type: String, enum: ['Pendiente', 'En proceso', 'Completado'], default: 'Pendiente' }
 });
 
-const Registro = mongoose.model('Registro', registroSchema);
+const Registro = mongoose.model('Registro', RegistroSchema);
 export default Registro;
