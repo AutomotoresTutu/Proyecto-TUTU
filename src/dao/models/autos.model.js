@@ -19,6 +19,8 @@ const autosSchema = new Schema({
     deuda: { type: Schema.Types.ObjectId, ref: 'Deuda' },
     elementosBasicos: { type :Schema.Types.ObjectId ,ref :'ElementosBasicos'},
     cliente: {type: Schema.Types.ObjectId, ref: 'Cliente'},
+    peritaje:{ type :Schema.Types.ObjectId ,ref :'Peritaje'},
+
     historialTransacciones: [{
         fecha: { type: Date, default: Date.now },
         estado: String,
@@ -28,9 +30,8 @@ const autosSchema = new Schema({
         }
     }],
     
-    
+    // mecanica: {type: Schema.Types.ObjectId, ref: 'Macanica'},
     // precio:{ type :Schema.Types.ObjectId ,ref :'Precios'},
-    // peritaje:{ type :Schema.Types.ObjectId ,ref :'Peritaje'},
     // gestoria:{ type :Schema.Types.ObjectId ,ref :'Gestoria'},
     // redes:{ type :Schema.Types.ObjectId ,ref :'Redes'},
     // ubicacionAuto:{ type:String },
