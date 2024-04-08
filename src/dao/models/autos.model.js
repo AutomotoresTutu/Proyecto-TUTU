@@ -11,11 +11,11 @@ const autosSchema = new Schema({
     color: {type: String, required: true },
     categoria: {type: Schema.Types.ObjectId, ref: 'Categoria'},
     transmision: { type: Schema.Types.ObjectId, ref: 'Transmision' },
-    titularRegistral: { type: Schema.Types.ObjectId, ref: 'titularRegistral' }, 
+    titularRegistral: { type: Schema.Types.ObjectId, ref: 'TitularRegistral' }, 
     estado: { type: Schema.Types.ObjectId, ref: 'Estado' },
     registroAutomotor: { type: Schema.Types.ObjectId, ref: 'Registro' },
     puestoPolicial: { type: Schema.Types.ObjectId, ref: 'Policia' },
-    docDelVehiculo: { type: Schema.Types.ObjectId, ref: 'Doc' },
+    docDelVehiculo: { type: Schema.Types.ObjectId, ref: 'Documentacion' },
     deuda: { type: Schema.Types.ObjectId, ref: 'Deuda' },
     elementosBasicos: { type :Schema.Types.ObjectId ,ref :'ElementosBasicos'},
 
