@@ -1,18 +1,38 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
+const gastoAdicionalSchema = new Schema({
+    nombre: String,
+    precio: Number
+});
+
 const parteArregloSchema = new Schema({
     nombre: String,
-    precioEstimado: Number,
-    precioReal: {
+    precioEstimado: {
+        type: Number,
+        default: 0
+    },
+    estado: {
+        type: String,
+        enum: ['Aprobado', 'Rechazado', 'Pendiente'],
+        default: 'Pendiente'
+    },
+    precioRealDeParte: {
+        type: Number,
+        default: 0
+    },
+    gastosAdicionalesDeParte: [gastoAdicionalSchema],
+    gastoTotalDeParte: {
         type: Number,
         default: 0
     },
     arreglada: {
         type: Boolean,
         default: false
-    }
+    },
+    observaciones: String
 });
+
 
 const peritajeSchema = new Schema({
     auto: {
@@ -20,28 +40,21 @@ const peritajeSchema = new Schema({
         ref: 'Auto',
         required: true
     },
-    partesArreglar: [parteArregloSchema],
     cotizacionArregloEstimado: {
         type: Number,
         default: 0
     },
-    aprobacion: {
-        type: String,
-        enum: ['Aprobado', 'Rechazado', 'Pendiente'],
-        default: 'Pendiente'
-    },
-    gastosRealizados: {
+    partesArreglar: [parteArregloSchema],
+    gastosTotales: {
         type: Number,
         default: 0
+    },
+    observaciones: String,
+    estadoProceso: {
+        type: String,
+        enum: ['Pendiente', 'En Proceso', 'Completado'],
+        default: 'Pendiente'
     }
-});
-
-peritajeSchema.virtual('totalGastosEstimados').get(function() {
-    return this.partesArreglar.reduce((total, parte) => total + parte.precioEstimado, 0);
-});
-
-peritajeSchema.virtual('totalGastosReales').get(function() {
-    return this.partesArreglar.reduce((total, parte) => total + parte.precioReal, 0);
 });
 
 const Peritaje = mongoose.model('Peritaje', peritajeSchema);
