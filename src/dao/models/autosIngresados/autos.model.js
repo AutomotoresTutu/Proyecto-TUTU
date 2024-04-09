@@ -21,7 +21,7 @@ const autosSchema = new Schema({
     cliente: {type: Schema.Types.ObjectId, ref: 'Vendedor'},
     peritaje:{ type :Schema.Types.ObjectId ,ref :'Peritaje'},
     mecanica: {type: Schema.Types.ObjectId, ref: 'Mecanica'},
-
+    
     historialTransacciones: [{
         fecha: { type: Date, default: Date.now },
         estado: String,
@@ -34,7 +34,7 @@ const autosSchema = new Schema({
     // precio:{ type :Schema.Types.ObjectId ,ref :'Precios'},
 
     // redes:{ type :Schema.Types.ObjectId ,ref :'Redes'},
-    // ubicacionAuto:{ type:String },
+    // ubicacionAuto:{ type: Schema.Tyoes.ObjectId, ref: 'Ubicacion },
     // preparado:{ type :Schema.Types.ObjectId ,ref :'Preparado'},
     // venta:{ type :Schema.Types.ObjectId ,ref :'Venta'},
     // postventa:{ type :Schema.Types.ObjectId ,ref :'Posventa'},
