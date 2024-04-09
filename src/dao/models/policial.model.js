@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
-const PolicialSchema = new mongoose.Schema({
-    auto: { type: mongoose.Schema.Types.ObjectId, ref: 'Auto', required: true },
+const PolicialSchema = new Schema({
+    auto: { type: Schema.Types.ObjectId, ref: 'Auto', required: true },
     verificacionPolicial: { 
         solicitado: { type: Boolean, default: false }, 
         fechaPedido: { type: Date, default: null }, 

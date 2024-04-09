@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const ElementosSchema = new Schema({
     auto: {
         type: Schema.Types.ObjectId,
-        ref: 'Autos',
+        ref: 'Auto',
         required: true
     },
     stereo: { type: Boolean, default: false },

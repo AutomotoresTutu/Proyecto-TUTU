@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const estadoSchema = new Schema({
-    auto: { type: Schema.Types.ObjectId, ref: 'Auto' },
+    auto: { type: Schema.Types.ObjectId, ref: 'Auto', required: true },
     nombre: { type: String, enum: ['Nuevo', 'Usado'], required: true },
     observaciones: { type: String }
 });

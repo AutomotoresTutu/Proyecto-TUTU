@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const DocumentacionSchema = new Schema({
-    auto: { type: Schema.Types.ObjectId, ref: 'Autos', required: true },
+    auto: { type: Schema.Types.ObjectId, ref: 'Auto', required: true },
     tituloAutomotor: { type: Boolean, default: false },
     tarjetaVerde: { type: Boolean, default: false },
     tarjetaAutorizados: {

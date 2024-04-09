@@ -7,6 +7,7 @@ const TelefonoSchema = new Schema({
 });
 
 const VendedorSchema = new Schema({
+    auto: { type: Schema.Types.ObjectId, ref: 'Auto', required: true },
     nombreCompleto: { type: String, required: true },
     dni: {type: String, required: true },
     email: { type: String, required: true },

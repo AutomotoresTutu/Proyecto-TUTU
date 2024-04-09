@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
-const RegistroSchema = new mongoose.Schema({
-    auto: { type: mongoose.Schema.Types.ObjectId, ref: 'Auto', required: true },
+const RegistroSchema = new Schema({
+    auto: { type: Schema.Types.ObjectId, ref: 'Auto', required: true },
     ceroOcho: { type: Boolean, default: false },
     treceLibreDeuda: {
         tieneLibreDeuda: {type: Boolean, default: false},

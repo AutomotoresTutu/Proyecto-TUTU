@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
-const DeudaSchema = new mongoose.Schema({
-    auto: { type: mongoose.Schema.Types.ObjectId, ref: 'Auto', required: true },
+const DeudaSchema = new Schema({
+    auto: { type: Schema.Types.ObjectId, ref: 'Auto', required: true },
     deudaInfracciones: { 
         tieneDeudaInfracciones: { type: Boolean, default: false },
         pesos: { type: Number, default: 0 }, },
