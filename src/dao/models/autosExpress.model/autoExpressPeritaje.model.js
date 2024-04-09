@@ -19,5 +19,5 @@ const autoExpressSchema = new Schema({
     fechaPeritaje: Date
 });
 
-const AutoExpress = mongoose.model('AutoExpress', autoExpressSchema);
+const AutoExpress = mongoose.model('AutoExpressPeritaje', autoExpressSchema);
 export default AutoExpress;
