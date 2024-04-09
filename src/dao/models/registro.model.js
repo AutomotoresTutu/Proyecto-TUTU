@@ -4,11 +4,13 @@ const RegistroSchema = new mongoose.Schema({
     auto: { type: mongoose.Schema.Types.ObjectId, ref: 'Auto', required: true },
     ceroOcho: { type: Boolean, default: false },
     treceLibreDeuda: {
+        tieneLibreDeuda: {type: Boolean, default: false},
         solicitado: { type: Boolean, default: false },
         fechaPedido: { type: Date, default: null },
         fechaVencimiento: { type: Date, default: null }
     },
     informeDominioHistorico: {
+        tieneDominioHistorico: {type: Boolean, default: false},
         solicitado: { type: Boolean, default: false },
         fechaPedido: { type: Date, default: null },
         fechaVencimiento: { type: Date, default: null }

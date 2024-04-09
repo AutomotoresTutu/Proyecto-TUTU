@@ -18,8 +18,9 @@ const autosSchema = new Schema({
     puestoPolicial: { type: Schema.Types.ObjectId, ref: 'Policia' },
     docDelVehiculo: { type: Schema.Types.ObjectId, ref: 'Documentacion' },
     deuda: { type: Schema.Types.ObjectId, ref: 'Deuda' },
-    cliente: {type: Schema.Types.ObjectId, ref: 'Cliente'},
+    cliente: {type: Schema.Types.ObjectId, ref: 'Vendedor'},
     peritaje:{ type :Schema.Types.ObjectId ,ref :'Peritaje'},
+    mecanica: {type: Schema.Types.ObjectId, ref: 'Mecanica'},
 
     historialTransacciones: [{
         fecha: { type: Date, default: Date.now },
@@ -30,9 +31,8 @@ const autosSchema = new Schema({
         }
     }],
     
-    // mecanica: {type: Schema.Types.ObjectId, ref: 'Mecanica'},
     // precio:{ type :Schema.Types.ObjectId ,ref :'Precios'},
-    // gestoria:{ type :Schema.Types.ObjectId ,ref :'Gestoria'},
+
     // redes:{ type :Schema.Types.ObjectId ,ref :'Redes'},
     // ubicacionAuto:{ type:String },
     // preparado:{ type :Schema.Types.ObjectId ,ref :'Preparado'},

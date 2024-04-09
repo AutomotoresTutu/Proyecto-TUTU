@@ -3,14 +3,14 @@ import mongoose from 'mongoose';
 const DeudaSchema = new mongoose.Schema({
     auto: { type: mongoose.Schema.Types.ObjectId, ref: 'Auto', required: true },
     deudaInfracciones: { 
-        pesos: { type: Number, default: 0 }, 
-        type: { type: Boolean, default: false } },
+        tieneDeudaInfracciones: { type: Boolean, default: false },
+        pesos: { type: Number, default: 0 }, },
     deudaMunicipalidad: {
-        pesos: { type: Number, default: 0 }, 
-        type: { type: Boolean, default: false } },
+        tieneDeudaMuni: { type: Boolean, default: false },
+        pesos: { type: Number, default: 0 }, },
     deudaRentas: { 
-        pesos: { type: Number, default: 0 }, 
-        type: { type: Boolean, default: false } },
+        tieneDeudaRentas: { type: Boolean, default: false },
+        pesos: { type: Number, default: 0 }, },
     montoDeuda: { 
         type: Number, default: function() { 
             return this.deudaInfracciones.pesos + this.deudaMunicipalidad.pesos + this.deudaRentas.pesos; 
