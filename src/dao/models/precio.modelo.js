@@ -16,6 +16,15 @@ const preciosSchema = new Schema({
     precioFinanciado: {
         type: Number
     },
+    precioContadoDolar: {
+        type: Number
+    },
+    precioPermutaDolar: {
+        type: Number
+    },
+    precioFinanciadoDolar: {
+        type: Number
+    },
     precioMesAnteriorRevista: {
         type: Number
     },
