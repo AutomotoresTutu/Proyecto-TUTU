@@ -1,25 +1,27 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const mecanicaSchema = new Schema({
-    peritaje: {
-        type: Schema.Types.ObjectId,
-        ref: 'Peritaje',
-        required: true
-    },
-    fechaArreglo: {
-        type: Date,
-        required: true
-    },
-    gastosArreglo: [{
+const MecanicaSchema = new Schema({
+    auto: { type: Schema.Types.ObjectId, ref: 'Auto', required: true },
+    partesPeritadas: [{
         nombre: String,
-        precio: Number
+        precioEstimado: { type: Number, default: 0 },
+        estado: { type: String, enum: ['Aprobado', 'Rechazado', 'Pendiente'], default: 'Pendiente' },
+        fechaAprobacion: Date, 
+        fechaRechazo: Date, 
+        fechaArreglo: Date,
+        gastosArreglo: { type: Number, default: 0 },
+        gastoAdicional: {
+            nombre: String,
+            monto: Number
+        },
+        empleadoCargo: String,
+        observaciones: String
     }],
-    empleadoCargo: {
-        type: String,
-        required: true
-    }
+    observaciones: String,
+    estadoProceso: { type: String, enum: ['Pendiente', 'Completado'], default: 'Pendiente' },
+    fechaCarga: { type: Date, default: Date.now }
 });
 
-const Mecanica = mongoose.model('Mecanica', mecanicaSchema);
+const Mecanica = mongoose.model('Mecanica', MecanicaSchema);
 export default Mecanica;
