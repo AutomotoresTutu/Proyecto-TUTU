@@ -14,7 +14,7 @@ const procesoSubesquema = new Schema({
   }
 });
 
-const procesoAlistajeSchema = new Schema({
+const AlistajeSchema = new Schema({
   auto: {
     type: Schema.Types.ObjectId,
     ref: 'Auto',
@@ -34,6 +34,6 @@ const procesoAlistajeSchema = new Schema({
   }
 });
 
-const ProcesoAlistaje = mongoose.model('ProcesoAlistaje', procesoAlistajeSchema);
+const Alistaje = mongoose.model('Alistaje', AlistajeSchema);
 
-module.exports = ProcesoAlistaje;
+module.exports = Alistaje;

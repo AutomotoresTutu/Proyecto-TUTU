@@ -22,6 +22,7 @@ const autosSchema = new Schema({
     vendedor: {type: Schema.Types.ObjectId, ref: 'Vendedor'},
     comprador: {type: Schema.Types.ObjectId, ref: 'Comprador'},
     mecanica: {type: Schema.Types.ObjectId, ref: 'Mecanica'},
+    alistaje:{ type: Schema.Types.ObjectId ,ref : 'Alistaje'},
     postventa:{ type: Schema.Types.ObjectId ,ref : 'Posventa'},
     precio:{ type : Schema.Types.ObjectId ,ref : 'Precios'},
 
@@ -36,7 +37,6 @@ const autosSchema = new Schema({
     
 
     // redes:{ type: Schema.Types.ObjectId ,ref : 'Redes'},
-    // alistaje:{ type: Schema.Types.ObjectId ,ref : 'Alistaje'},
     // venta:{ type: Schema.Types.ObjectId ,ref : 'Venta'},
     // cierreOperacion:{ type: Schema.Types.ObjectId ,ref : 'CierreOperacion'},
     // adminOperacion:{ type: Schema.Types.ObjectId ,ref : 'AdminOperacion'},
