@@ -26,8 +26,8 @@ const procesoAlistajeSchema = new Schema({
   brillo: procesoSubesquema,
   estado: {
     type: String,
-    enum: ['proceso', 'pendiente', 'completado'],
-    default: 'pendiente'
+    enum: ['En proceso', 'Pendiente', 'Completado'],
+    default: 'Pendiente'
   },
   fechaProceso: {
     type: Date

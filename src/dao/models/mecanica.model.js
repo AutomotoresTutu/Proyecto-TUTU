@@ -19,7 +19,7 @@ const MecanicaSchema = new Schema({
         observaciones: String
     }],
     observaciones: String,
-    estadoProceso: { type: String, enum: ['Pendiente', 'Completado'], default: 'Pendiente' },
+    estadoProceso: { type: String, enum: ['Pendiente','En proceso', 'Completado'], default: 'Pendiente' },
     fechaCarga: { type: Date, default: Date.now }
 });
 

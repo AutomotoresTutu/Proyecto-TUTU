@@ -14,12 +14,12 @@ const empleadoSchema = new Schema({
     area: {
         type: String,
         required: true,
-        enum: ['marketing', 'recursos humanos', 'administracion', 'tesoreria', 'ventas', 'alistaje', 'gestoria']
+        enum: ['Marketing', 'Recursos humanos', 'Administracion', 'Tesoreria', 'Ventas', 'Mecanica', 'Gestoria', 'Alistaje']
     },
     rol: {
         type: String,
-        default: 'empleado',
-        enum: ['empleado', 'administrador']
+        default: 'Empleado',
+        enum: ['Empleado', 'Administrador']
     }
 });
 
