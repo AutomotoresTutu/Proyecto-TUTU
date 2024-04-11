@@ -23,7 +23,6 @@ const autosSchema = new Schema({
     comprador: {type: Schema.Types.ObjectId, ref: 'Comprador'},
     mecanica: {type: Schema.Types.ObjectId, ref: 'Mecanica'},
     postventa:{ type: Schema.Types.ObjectId ,ref : 'Posventa'},
-
     precio:{ type : Schema.Types.ObjectId ,ref : 'Precios'},
 
     historialTransacciones: [{
@@ -37,7 +36,7 @@ const autosSchema = new Schema({
     
 
     // redes:{ type: Schema.Types.ObjectId ,ref : 'Redes'},
-    // preparado:{ type: Schema.Types.ObjectId ,ref : 'Preparado'},
+    // alistaje:{ type: Schema.Types.ObjectId ,ref : 'Alistaje'},
     // venta:{ type: Schema.Types.ObjectId ,ref : 'Venta'},
     // cierreOperacion:{ type: Schema.Types.ObjectId ,ref : 'CierreOperacion'},
     // adminOperacion:{ type: Schema.Types.ObjectId ,ref : 'AdminOperacion'},
